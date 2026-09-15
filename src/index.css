@@ -1,10 +1,11 @@
 @import "tailwindcss";
 
 @theme {
-  --color-marca: #0066FF;
-  --color-fundosec: #0B132B;
-  --color-texto: #1A2530;
-  --color-geral: #F4F7F9;
-  --color-cartao: #E1EBF5;
-  --clolor-status: #4ECA80;
+--color-marca: #0066FF; 
+--color-destaque: #0066FF;
+--color-fundosec: #0B132B;
+--color-texto: #1A2530;
+--color-geral: #F4F7F9;
+--color-cartao: #E1EBF5;
+--color-status: #4ECA80;
 }
