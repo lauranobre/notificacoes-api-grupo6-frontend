@@ -44,25 +44,26 @@ function Home() {
   }
 
   return (
-    <div className="max-w-2xl mx-auto p-4">
-      <h1 className="text-2xl font-bold mb-4">Central de Notificações</h1>
-    
-      <NovaNotificacaoForm onAdicionar={adicionarNotificacao} />
-      <FilterBar filtroAtual={filtro} onFiltroChange={setFiltro} />
-  
-      {carregando && (
-        <p className="text-gray-500">Carregando notificações...</p>
-      )}
-      
-      {erro && (
-        <p className="text-red-600">Não foi possível carregar. Tente novamente.</p>
-      )}
-      
-      {!carregando && !erro && (
+  <main className="max-w-2xl mx-auto p-4">
+    <h1 className="text-2xl font-bold mb-4">Central de Notificações</h1>
+
+    {/* Formulário controlado */}
+    <NovaNotificacaoForm onAdicionar={adicionarNotificacao} />
+
+    {/* Barra de filtros */}
+    <FilterBar filtroAtual={filtro} onFiltroChange={setFiltro} />
+
+    {/* Estados de carregamento e erro */}
+    {carregando && <p className="text-gray-500">Carregando notificações...</p>}
+    {erro && <p className="text-red-600">Não foi possível carregar as notificações.</p>}
+
+    {/* Listagem */}
+    {!carregando && !erro && (
         <NotificationList notificacoes={notificacoesVisiveis} />
-      )}
-    </div>
-  );
+    )}
+  </main>
+);
+
 }
 
 export default Home;
