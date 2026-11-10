@@ -29,15 +29,19 @@ function NovaNotificacaoForm({ onAdicionar }) {
         value={titulo}
         onChange={(e) => setTitulo(e.target.value)}
         placeholder="Título da notificação"
+        aria-label="Título da notificação"
         className="border border-gray-200 rounded-lg px-3 py-2"
       />
       <textarea
         value={texto}
         onChange={(e) => setTexto(e.target.value)}
         placeholder="Texto"
+        aria-label="Texto da notificação"
         className="border border-gray-200 rounded-lg px-3 py-2"
       />
-      <Button variant="destaque">Adicionar notificação</Button>
+      <Button type="submit" variant="destaque">
+        Adicionar notificação
+      </Button>
     </form>
   );
 }
