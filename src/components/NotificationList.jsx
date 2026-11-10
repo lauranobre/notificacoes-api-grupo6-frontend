@@ -1,19 +1,15 @@
+// src/components/NotificationList.jsx
 import NotificationCard from "./NotificationCard";
 
-function NotificationList({ notificacoes }) {
-    if (notificacoes.length === 0) {
-        return (
-            <p className="text-gray-500 text-sm">Nenhuma notificação por aqui.</p>
-        );
-    }
-
-    return (
-        <div>
-            {notificacoes.map((n) => (
-                <NotificationCard key={n.id} {...n} />
-            ))}
-        </div>
-    );
+export default function NotificationList({ notificacoes }) {
+  return (
+    <div className="mt-4">
+      {/* PONTO CRÍTICO EXIGIDO: aria-live="polite" avisa leitores de tela quando novas mensagens chegam via API */}
+      <div aria-live="polite" className="flex flex-col gap-3">
+        {notificacoes.map((item) => (
+          <NotificationCard key={item.id} notificacao={item} />
+        ))}
+      </div>
+    </div>
+  );
 }
-
-export default NotificationList;
